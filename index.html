@@ -6,6 +6,7 @@
 <title>41 Cast | Podcast Oficial</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4b8b9b0a5f.js" crossorigin="anonymous"></script>
 
 <style>
 *{
@@ -87,7 +88,10 @@ border:1px solid rgba(29,185,84,0.4);
 text-decoration:none;
 color:white;
 font-weight:500;
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
 }
 
 /* BOTÃO PRINCIPAL */
@@ -114,7 +118,7 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:22px;
+font-size:24px;
 color:white;
 cursor:pointer;
 transition:0.3s;
@@ -122,7 +126,6 @@ z-index:999;
 text-decoration:none;
 }
 
-/* WhatsApp */
 .whatsapp{
 bottom:25px;
 right:25px;
@@ -131,7 +134,6 @@ box-shadow:0 0 20px rgba(37,211,102,0.6);
 animation:pulse 2s infinite;
 }
 
-/* Doação */
 .donate{
 bottom:100px;
 right:25px;
@@ -168,32 +170,63 @@ font-size:13px;
 <div class="subtitle">Podcast • Comunidade • Apoio</div>
 
 <div class="card primary">
-<a href="#" onclick="abrirInteligente()">🎧 Ouvir Agora</a>
+<a href="#" onclick="abrirInteligente()">
+<i class="fa-solid fa-headphones"></i> Ouvir Agora
+</a>
 </div>
 
 <div class="section-title">Plataformas</div>
 
-<div class="card"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank">Spotify</a></div>
-<div class="card"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank">Apple Podcasts</a></div>
-<div class="card"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank">Amazon Music</a></div>
-<div class="card"><a href="https://youtube.com/@41Cast" target="_blank">YouTube</a></div>
-<div class="card"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank">Deezer</a></div>
+<div class="card"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank">
+<i class="fab fa-spotify"></i> Spotify
+</a></div>
+
+<div class="card"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank">
+<i class="fab fa-apple"></i> Apple Podcasts
+</a></div>
+
+<div class="card"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank">
+<i class="fab fa-amazon"></i> Amazon Music
+</a></div>
+
+<div class="card"><a href="https://youtube.com/@41Cast" target="_blank">
+<i class="fab fa-youtube"></i> YouTube
+</a></div>
+
+<div class="card"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank">
+<i class="fa-solid fa-music"></i> Deezer
+</a></div>
 
 <div class="section-title">WhatsApp</div>
 
-<div class="card"><a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank">👥 Comunidade Oficial</a></div>
-<div class="card"><a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank">📩 Grupo de Mensagens</a></div>
+<div class="card"><a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank">
+<i class="fab fa-whatsapp"></i> Comunidade Oficial
+</a></div>
+
+<div class="card"><a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank">
+<i class="fab fa-whatsapp"></i> Grupo de Mensagens
+</a></div>
 
 <div class="section-title">Redes Sociais</div>
 
-<div class="card"><a href="https://www.instagram.com/41Cast" target="_blank">Instagram</a></div>
-<div class="card"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank">Facebook</a></div>
-<div class="card"><a href="mailto:41castcwb@gmail.com">Email</a></div>
+<div class="card"><a href="https://www.instagram.com/41Cast" target="_blank">
+<i class="fab fa-instagram"></i> Instagram
+</a></div>
+
+<div class="card"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank">
+<i class="fab fa-facebook"></i> Facebook
+</a></div>
+
+<div class="card"><a href="mailto:41castcwb@gmail.com">
+<i class="fa-solid fa-envelope"></i> Email
+</a></div>
 
 <div class="section-title">Apoie o Projeto</div>
 
 <div class="card primary">
-<a href="doar.html">💚 Ir para Página de Doação</a>
+<a href="doar.html">
+<i class="fa-solid fa-heart"></i> Ir para Página de Doação
+</a>
 </div>
 
 <footer>
@@ -202,11 +235,13 @@ font-size:13px;
 
 </div>
 
-<!-- BOTÃO FLUTUANTE DOAÇÃO -->
-<a href="doar.html" class="float-btn donate">💚</a>
+<a href="doar.html" class="float-btn donate">
+<i class="fa-solid fa-heart"></i>
+</a>
 
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">💬</a>
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 function abrirInteligente(){
