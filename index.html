@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎙 41 Cast | Ouça Agora</title>
+<meta name="description" content="Ouça o 41 Cast e apoie o projeto.">
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#111,#1c1c1c);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+p{
+color:#ccc;
+margin-bottom:30px;
+}
+
+.link{
+display:block;
+margin:12px auto;
+padding:15px;
+max-width:420px;
+background:#222;
+color:white;
+text-decoration:none;
+border-radius:12px;
+transition:0.3s;
+font-weight:bold;
+}
+
+.link:hover{
+background:#444;
+transform:scale(1.05);
+}
+
+.ouvir{
+background:#1DB954;
+}
+
+.social{
+background:#333;
+}
+
+.ajude{
+background:#00C853;
+font-size:18px;
+}
+
+footer{
+margin-top:40px;
+font-size:14px;
+color:#777;
+}
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+animation:pulse 2s infinite;
+transition:0.3s;
+z-index:999;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+}
+
+/* BOTÃO FLUTUANTE PIX */
+.pix-float{
+position:fixed;
+bottom:100px;
+right:25px;
+width:60px;
+height:60px;
+background:#00C853;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+transition:0.3s;
+z-index:999;
+font-weight:bold;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+.pix-float:hover{
+transform:scale(1.1);
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+.toast{
+position:fixed;
+bottom:180px;
+right:25px;
+background:#000;
+color:#fff;
+padding:10px 15px;
+border-radius:8px;
+opacity:0;
+transition:0.4s;
+}
+
+.toast.show{
+opacity:1;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎙 41 Cast</h1>
+<a href="#" class="link ouvir" onclick="abrirInteligente()">🎧 Ouvir Agora</a>
+
+<a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank" class="link">Spotify</a>
+<a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank" class="link">Apple Podcasts</a>
+<a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank" class="link">Amazon Music</a>
+<a href="https://youtube.com/@41Cast" target="_blank" class="link">YouTube</a>
+<a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank" class="link">Deezer</a>
+
+<h2>💬 WhatsApp</h2>
+
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="link whatsapp-link">
+👥 Comunidade Oficial
+</a>
+
+<a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank" class="link whatsapp-link">
+📩 Grupo de Mensagens
+</a>
+
+<h2>🌍 Redes Sociais</h2>
+
+<a href="https://www.instagram.com/41Cast" target="_blank" class="link social">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank" class="link social">Facebook</a>
+<a href="mailto:41castcwb@gmail.com" class="link social">Email</a>
+
+<h2>💚 Apoie o Projeto</h2>
+
+<a href="#" onclick="copiarPix()" class="link ajude">
+💚 Ajude o Projeto (PIX)
+</a>
+
+<footer>
+© 2026 41 Cast — Todos os direitos reservados
+</footer>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS"
+class="whatsapp-float"
+target="_blank"
+aria-label="Comunidade WhatsApp">
+💬
+</a>
+
+<!-- BOTÃO PIX FLUTUANTE -->
+<div class="pix-float" onclick="copiarPix()">
+$
+</div>
+
+<div class="toast" id="toast">Chave PIX copiada! 🙌</div>
+
+<script>
+function abrirInteligente(){
+if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+window.open("https://podcasts.apple.com/br/podcast/41-cast/id1876223880","_blank");
+}else if(/Android/i.test(navigator.userAgent)){
+window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
+}else{
+window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
+}
+}
+
+function copiarPix(){
+navigator.clipboard.writeText("41castcwb@gmail.com");
+var toast=document.getElementById("toast");
+toast.classList.add("show");
+setTimeout(()=>{toast.classList.remove("show");},2000);
+}
+</script>
+
+</body>
+</html>
