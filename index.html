@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>41 Cast | Podcast Oficial</title>
-<meta name="description" content="Ouça o 41 Cast nas principais plataformas, participe da comunidade e apoie o projeto.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -21,11 +20,33 @@ background:linear-gradient(135deg,#0f0f0f,#1e1e1e,#121212);
 color:white;
 text-align:center;
 padding:40px 20px;
+overflow-x:hidden;
 }
 
 .container{
 max-width:500px;
 margin:auto;
+}
+
+/* ANIMAÇÃO BASE */
+.fade-up{
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 0.8s ease forwards;
+}
+
+.delay-1{animation-delay:0.2s;}
+.delay-2{animation-delay:0.4s;}
+.delay-3{animation-delay:0.6s;}
+.delay-4{animation-delay:0.8s;}
+.delay-5{animation-delay:1s;}
+.delay-6{animation-delay:1.2s;}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .logo{
@@ -148,50 +169,46 @@ font-size:13px;
 
 <div class="container">
 
-<div class="logo">🎙 41 Cast</div>
-<div class="subtitle">Podcast oficial • Ouça • Participe • Apoie</div>
+<div class="logo fade-up">🎙 41 Cast</div>
+<div class="subtitle fade-up delay-1">Podcast oficial • Ouça • Participe • Apoie</div>
 
-<div class="card primary">
+<div class="card primary fade-up delay-2">
 <a href="#" onclick="abrirInteligente()">🎧 Ouvir Agora</a>
 </div>
 
-<div class="section-title">Plataformas</div>
+<div class="section-title fade-up delay-3">Plataformas</div>
 
-<div class="card"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank">Spotify</a></div>
-<div class="card"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank">Apple Podcasts</a></div>
-<div class="card"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank">Amazon Music</a></div>
-<div class="card"><a href="https://youtube.com/@41Cast" target="_blank">YouTube</a></div>
-<div class="card"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank">Deezer</a></div>
+<div class="card fade-up delay-3"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank">Spotify</a></div>
+<div class="card fade-up delay-3"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank">Apple Podcasts</a></div>
+<div class="card fade-up delay-4"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank">Amazon Music</a></div>
+<div class="card fade-up delay-4"><a href="https://youtube.com/@41Cast" target="_blank">YouTube</a></div>
+<div class="card fade-up delay-5"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank">Deezer</a></div>
 
-<div class="section-title">WhatsApp</div>
+<div class="section-title fade-up delay-5">WhatsApp</div>
 
-<div class="card"><a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank">👥 Comunidade Oficial</a></div>
-<div class="card"><a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank">📩 Grupo de Mensagens</a></div>
+<div class="card fade-up delay-5"><a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank">👥 Comunidade Oficial</a></div>
+<div class="card fade-up delay-6"><a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank">📩 Grupo de Mensagens</a></div>
 
-<div class="section-title">Redes Sociais</div>
+<div class="section-title fade-up delay-6">Redes Sociais</div>
 
-<div class="card"><a href="https://www.instagram.com/41Cast" target="_blank">Instagram</a></div>
-<div class="card"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank">Facebook</a></div>
-<div class="card"><a href="mailto:41castcwb@gmail.com">Email</a></div>
+<div class="card fade-up delay-6"><a href="https://www.instagram.com/41Cast" target="_blank">Instagram</a></div>
+<div class="card fade-up delay-6"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank">Facebook</a></div>
+<div class="card fade-up delay-6"><a href="mailto:41castcwb@gmail.com">Email</a></div>
 
-<div class="section-title">Apoie o Projeto</div>
+<div class="section-title fade-up delay-6">Apoie o Projeto</div>
 
-<div class="card primary">
+<div class="card primary fade-up delay-6">
 <a href="#" onclick="copiarPix()">💚 Ajude o Projeto (PIX)</a>
 </div>
 
-<footer>
+<footer class="fade-up delay-6">
 © 2026 41 Cast — Todos os direitos reservados
 </footer>
 
 </div>
 
-<!-- BOTÕES FLUTUANTES -->
-
 <a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">💬</a>
-
 <div class="float-btn pix" onclick="copiarPix()">$</div>
-
 <div class="toast" id="toast">Chave PIX copiada! 🙌</div>
 
 <script>
