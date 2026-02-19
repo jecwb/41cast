@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>41 Cast | Podcast Oficial</title>
-
 <meta name="theme-color" content="#1DB954">
+
 <link rel="manifest" href="manifest.json">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- FONT AWESOME CORRETO -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/4b8b9b0a5f.js" crossorigin="anonymous"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{background:#0b0f14;color:#fff;overflow-x:hidden;}
-
 body::before{
 content:"";
 position:fixed;
@@ -31,58 +28,38 @@ z-index:-1;
 0%{transform:translate(0,0);}
 100%{transform:translate(-10%,-10%);}
 }
-
 .container{
-max-width:520px;
-margin:auto;
-padding:60px 20px;
-text-align:center;
+max-width:520px;margin:auto;padding:60px 20px;text-align:center;
 animation:fadeIn 1.2s ease;
 }
-
 @keyframes fadeIn{
 from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
-
 .logo{
-font-size:42px;
-font-weight:700;
+font-size:40px;font-weight:700;
 background:linear-gradient(90deg,#1DB954,#00f2ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 margin-bottom:10px;
 }
-
-.subtitle{
-color:#9ca3af;
-margin-bottom:40px;
-}
+.subtitle{color:#9ca3af;margin-bottom:40px;}
 
 .card{
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 backdrop-filter:blur(12px);
-padding:16px;
-border-radius:18px;
-margin:14px 0;
-transition:.3s;
+padding:16px;border-radius:18px;
+margin:14px 0;transition:.3s;
 }
-
 .card:hover{
 transform:translateY(-6px);
 box-shadow:0 0 25px rgba(29,185,84,0.3);
 border:1px solid rgba(29,185,84,0.4);
 }
-
 .card a{
-text-decoration:none;
-color:white;
-font-weight:500;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
+text-decoration:none;color:white;font-weight:500;
+display:flex;align-items:center;justify-content:center;gap:10px;
 }
 
 .primary{
@@ -92,84 +69,41 @@ box-shadow:0 0 20px rgba(29,185,84,0.4);
 }
 
 .section-title{
-margin:35px 0 15px;
-font-size:13px;
-letter-spacing:2px;
-color:#6b7280;
-text-transform:uppercase;
+margin:35px 0 15px;font-size:13px;
+letter-spacing:2px;color:#6b7280;text-transform:uppercase;
 }
 
-/* BOTÕES FLUTUANTES */
 .float-btn{
-position:fixed;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-color:white;
-z-index:999;
-text-decoration:none;
-transition:.3s;
+position:fixed;width:60px;height:60px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-size:24px;color:white;z-index:999;text-decoration:none;
 }
-
 .whatsapp{
-bottom:25px;
-right:25px;
-background:#25D366;
+bottom:25px;right:25px;background:#25D366;
 box-shadow:0 0 20px rgba(37,211,102,.6);
 animation:pulse 2s infinite;
 }
-
 .donate{
-bottom:100px;
-right:25px;
+bottom:100px;right:25px;
 background:linear-gradient(135deg,#1DB954,#0ea5e9);
 box-shadow:0 0 20px rgba(29,185,84,.6);
 animation:pulseDonate 2s infinite;
 }
-
 @keyframes pulse{
 0%{box-shadow:0 0 0 0 rgba(37,211,102,.7);}
 70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
-
 @keyframes pulseDonate{
 0%{box-shadow:0 0 0 0 rgba(29,185,84,.7);}
 70%{box-shadow:0 0 0 18px rgba(29,185,84,0);}
 100%{box-shadow:0 0 0 0 rgba(29,185,84,0);}
 }
-
-/* BOTÃO INSTALAR */
-#installBtn{
-position:fixed;
-top:20px;
-right:20px;
-padding:10px 16px;
-border:none;
-border-radius:12px;
-background:linear-gradient(135deg,#1DB954,#0ea5e9);
-color:#fff;
-font-weight:600;
-display:none;
-z-index:1000;
-cursor:pointer;
-}
-
-footer{
-margin-top:50px;
-color:#555;
-font-size:13px;
-}
+footer{margin-top:50px;color:#555;font-size:13px;}
 </style>
 </head>
 
 <body>
-
-<button id="installBtn">📲 Instalar App</button>
 
 <div class="container">
 
@@ -209,13 +143,8 @@ font-size:13px;
 
 </div>
 
-<a href="doar.html" class="float-btn donate">
-<i class="fa-solid fa-heart"></i>
-</a>
-
-<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a href="doar.html" class="float-btn donate"><i class="fa-solid fa-heart"></i></a>
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
 function abrirInteligente(){
@@ -228,24 +157,11 @@ window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
 
 /* PWA */
 if ("serviceWorker" in navigator) {
-navigator.serviceWorker.register("service-worker.js");
+window.addEventListener("load", function() {
+navigator.serviceWorker.register("/service-worker.js")
+.then(function() { console.log("PWA ativo"); });
+});
 }
-
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-e.preventDefault();
-deferredPrompt = e;
-installBtn.style.display = "block";
-});
-
-installBtn.addEventListener("click", async () => {
-installBtn.style.display = "none";
-deferredPrompt.prompt();
-await deferredPrompt.userChoice;
-deferredPrompt = null;
-});
 </script>
 
 </body>
