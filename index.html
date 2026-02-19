@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>41 Cast</title>
+
 <meta name="theme-color" content="#0f172a">
-
 <link rel="manifest" href="manifest.json">
-
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 
-<!-- Font Awesome -->
+<!-- Font Awesome Oficial -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -20,28 +18,29 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
 background:#0f172a;
-color:#fff;
+color:white;
 text-align:center;
-padding-bottom:90px;
+padding-bottom:120px;
 }
 
-/* Topo */
+/* HEADER */
 header{
-padding:20px;
+padding:30px 20px 10px;
 }
 
 header img{
-width:70px;
-border-radius:15px;
+width:80px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* Links */
-.links{
+/* CONTAINER */
+.container{
 margin-top:30px;
 display:flex;
 flex-direction:column;
@@ -49,25 +48,31 @@ gap:15px;
 padding:0 20px;
 }
 
-.links a{
+/* BOTÕES PADRÃO */
+.btn{
 text-decoration:none;
 color:white;
-padding:14px;
+padding:15px;
 border-radius:14px;
 font-weight:600;
-background:linear-gradient(135deg,#1DB954,#0ea5e9);
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
 transition:0.3s;
+background:#1e293b;
 }
 
-.links a:hover{
+.btn:hover{
 transform:scale(1.05);
 }
 
-/* Botão instalar fixo */
+/* BOTÕES PRINCIPAIS (gradiente) */
+.primary{
+background:linear-gradient(135deg,#1DB954,#0ea5e9);
+}
+
+/* BOTÃO INSTALAR */
 #installBtn{
 position:fixed;
 bottom:20px;
@@ -76,17 +81,52 @@ transform:translateX(-50%);
 background:#1DB954;
 border:none;
 color:white;
-padding:14px 24px;
+padding:14px 26px;
 border-radius:30px;
 font-weight:600;
 font-size:16px;
 display:none;
-box-shadow:0 5px 20px rgba(0,0,0,0.4);
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
 cursor:pointer;
+z-index:999;
 }
 
-#installBtn:hover{
-opacity:0.9;
+/* BOTÃO FLUTUANTE WHATS */
+.whats-float{
+position:fixed;
+right:20px;
+bottom:90px;
+background:#25D366;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:26px;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+text-decoration:none;
+z-index:1000;
+}
+
+/* BOTÃO FLUTUANTE DOAR */
+.donate-float{
+position:fixed;
+left:20px;
+bottom:90px;
+background:#e11d48;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:22px;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+text-decoration:none;
+z-index:1000;
 }
 </style>
 </head>
@@ -94,22 +134,37 @@ opacity:0.9;
 <body>
 
 <header>
-<!-- ÍCONE PEQUENO NO TOPO -->
 <img src="icons/icon-192.png" alt="41 Cast">
 </header>
 
-<div class="links">
+<div class="container">
 
-<a href="https://open.spotify.com" target="_blank">
+<a href="https://open.spotify.com" target="_blank" class="btn primary">
 <i class="fab fa-spotify"></i> Ouça no Spotify
 </a>
 
-<a href="https://wa.me/5599999999999" target="_blank">
-<i class="fab fa-whatsapp"></i> Fale no WhatsApp
+<a href="https://www.instagram.com/41Cast" target="_blank" class="btn">
+<i class="fab fa-instagram"></i> Instagram
 </a>
 
-<a href="doar.html">
-<i class="fas fa-heart"></i> Apoie o 41 Cast
+<a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank" class="btn">
+<i class="fab fa-facebook"></i> Facebook
+</a>
+
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="btn">
+<i class="fab fa-whatsapp"></i> Comunidade WhatsApp
+</a>
+
+<a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank" class="btn">
+<i class="fab fa-whatsapp"></i> Grupo de Mensagens
+</a>
+
+<a href="mailto:41castcwb@gmail.com" class="btn">
+<i class="fas fa-envelope"></i> Contato por Email
+</a>
+
+<a href="doar.html" class="btn primary">
+<i class="fas fa-heart"></i> Ajude o Projeto
 </a>
 
 </div>
@@ -117,13 +172,23 @@ opacity:0.9;
 <!-- BOTÃO INSTALAR -->
 <button id="installBtn">📲 Instalar App</button>
 
+<!-- BOTÃO FLUTUANTE WHATS -->
+<a href="https://wa.me/5541999999999" target="_blank" class="whats-float">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- BOTÃO FLUTUANTE DOAR -->
+<a href="doar.html" class="donate-float">
+<i class="fas fa-heart"></i>
+</a>
+
 <script>
 /* SERVICE WORKER */
 if ("serviceWorker" in navigator) {
 navigator.serviceWorker.register("service-worker.js");
 }
 
-/* BOTÃO INSTALAR MANUAL */
+/* BOTÃO INSTALAR */
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
@@ -136,7 +201,7 @@ installBtn.style.display = "block";
 installBtn.addEventListener("click", async () => {
 if (deferredPrompt) {
 deferredPrompt.prompt();
-const { outcome } = await deferredPrompt.userChoice;
+await deferredPrompt.userChoice;
 deferredPrompt = null;
 installBtn.style.display = "none";
 }
