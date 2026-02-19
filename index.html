@@ -119,12 +119,12 @@ font-weight:600;
 box-shadow:0 0 20px rgba(29,185,84,0.4);
 }
 
-/* BOTÃO INSTALAR APP */
+/* BOTÃO INSTALAR APP - SEMPRE VISÍVEL */
 .install-btn {
-background: rgba(255,255,255,0.1);
-border: 2px solid #1DB954;
+background: linear-gradient(135deg, #1DB954, #0ea5e9);
+border: none;
 color: white;
-padding: 16px;
+padding: 18px;
 border-radius: 18px;
 margin: 30px 0 20px;
 cursor: pointer;
@@ -132,25 +132,94 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
-font-weight: 600;
-font-size: 16px;
+font-weight: 700;
+font-size: 18px;
 transition: 0.3s;
 width: 100%;
 backdrop-filter: blur(12px);
+box-shadow: 0 0 30px rgba(29,185,84,0.4);
+border: 2px solid rgba(255,255,255,0.1);
 }
 
 .install-btn:hover {
-background: #1DB954;
 transform: translateY(-4px);
-box-shadow: 0 0 30px rgba(29,185,84,0.5);
+box-shadow: 0 0 40px rgba(29,185,84,0.8);
+background: linear-gradient(135deg, #1ed760, #0ea5e9);
 }
 
 .install-btn i {
 font-size: 24px;
 }
 
-.install-btn.hidden {
+/* Modal de instruções */
+.modal {
 display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+backdrop-filter: blur(10px);
+z-index: 1000;
+align-items: center;
+justify-content: center;
+}
+
+.modal-content {
+background: #1a1f26;
+padding: 30px 20px;
+border-radius: 30px;
+max-width: 320px;
+text-align: center;
+border: 1px solid rgba(29,185,84,0.3);
+box-shadow: 0 0 50px rgba(29,185,84,0.2);
+}
+
+.modal-content h3 {
+color: #1DB954;
+margin-bottom: 20px;
+font-size: 24px;
+}
+
+.modal-content p {
+color: #9ca3af;
+margin-bottom: 20px;
+line-height: 1.6;
+}
+
+.modal-content .close-btn {
+background: #1DB954;
+border: none;
+color: white;
+padding: 15px 30px;
+border-radius: 50px;
+font-weight: 600;
+cursor: pointer;
+margin-top: 20px;
+width: 100%;
+font-size: 16px;
+}
+
+.modal-content .close-btn:hover {
+background: #0ea5e9;
+}
+
+.instruction-step {
+display: flex;
+align-items: center;
+gap: 15px;
+text-align: left;
+margin: 15px 0;
+padding: 10px;
+background: rgba(255,255,255,0.05);
+border-radius: 15px;
+}
+
+.instruction-step i {
+font-size: 24px;
+color: #1DB954;
+width: 30px;
 }
 
 .section-title{
@@ -287,11 +356,44 @@ font-size: 28px;
 </a>
 </div>
 
-<!-- BOTÃO INSTALAR APP -->
-<button class="install-btn hidden" id="installButton">
+<!-- BOTÃO INSTALAR APP - SEMPRE VISÍVEL -->
+<button class="install-btn" id="installButton">
 <i class="fas fa-download"></i> Instalar App
 <i class="fas fa-mobile-alt"></i>
 </button>
+
+<!-- MODAL DE INSTRUÇÕES -->
+<div id="installModal" class="modal">
+  <div class="modal-content">
+    <h3><i class="fas fa-mobile-alt"></i> Instalar App</h3>
+    
+    <div class="instruction-step">
+      <i class="fab fa-chrome"></i>
+      <div>
+        <strong>No Chrome/Android:</strong><br>
+        Toque nos 3 pontos ⋮ > "Instalar app"
+      </div>
+    </div>
+    
+    <div class="instruction-step">
+      <i class="fab fa-safari"></i>
+      <div>
+        <strong>No Safari (iPhone/iPad):</strong><br>
+        Toque em Compartilhar 📤 > "Adicionar à Tela de Início"
+      </div>
+    </div>
+    
+    <div class="instruction-step">
+      <i class="fas fa-check-circle"></i>
+      <div>
+        <strong>Pronto!</strong><br>
+        O ícone aparecerá na sua tela inicial
+      </div>
+    </div>
+    
+    <button class="close-btn" onclick="fecharModal()">Entendi</button>
+  </div>
+</div>
 
 <footer>
 © 2026 41 Cast — Todos os direitos reservados
@@ -319,33 +421,50 @@ window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
 }
 }
 
+// Funções do Modal
+function abrirModal() {
+  document.getElementById('installModal').style.display = 'flex';
+}
+
+function fecharModal() {
+  document.getElementById('installModal').style.display = 'none';
+}
+
+// Fechar modal ao clicar fora
+window.onclick = function(event) {
+  const modal = document.getElementById('installModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
 // PWA - Instalação do App
 let deferredPrompt;
 const installButton = document.getElementById('installButton');
 
+// Tenta capturar o evento de instalação automática
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Previne que o mini-infobar apareça no mobile
   e.preventDefault();
-  // Armazena o evento para usar depois
   deferredPrompt = e;
-  // Mostra o botão de instalação
-  installButton.classList.remove('hidden');
+  
+  // Modifica o comportamento do botão para instalação automática
+  installButton.onclick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`Usuário ${outcome === 'accepted' ? 'aceitou' : 'recusou'} a instalação`);
+      deferredPrompt = null;
+    } else {
+      // Se não tiver instalação automática, mostra instruções
+      abrirModal();
+    }
+  };
 });
 
-installButton.addEventListener('click', async () => {
-  if (!deferredPrompt) {
-    return;
-  }
-  // Mostra o prompt de instalação
-  deferredPrompt.prompt();
-  // Aguarda a escolha do usuário
-  const { outcome } = await deferredPrompt.userChoice;
-  console.log(`Usuário ${outcome === 'accepted' ? 'aceitou' : 'recusou'} a instalação`);
-  // Limpa o prompt
-  deferredPrompt = null;
-  // Esconde o botão
-  installButton.classList.add('hidden');
-});
+// Se não houver suporte a instalação automática, mostra instruções
+if (!deferredPrompt) {
+  installButton.onclick = abrirModal;
+}
 
 // Registra o Service Worker
 if ('serviceWorker' in navigator) {
@@ -360,11 +479,10 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Detecta se o app já está instalado (opcional)
+// Detecta se o app já está instalado
 window.addEventListener('appinstalled', (e) => {
   console.log('App instalado com sucesso!');
-  installButton.classList.add('hidden');
-  deferredPrompt = null;
+  alert('🎉 41 Cast instalado com sucesso!');
 });
 </script>
 
