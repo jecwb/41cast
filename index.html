@@ -23,7 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Seu CSS existente - mantém igual */
 *{
 margin:0;
 padding:0;
@@ -226,10 +225,69 @@ font-size: 1.1em;
 .float-btn i {
 font-size: 28px;
 }
+
+/* ===== BANNER DE ÚLTIMAS NOTÍCIAS ===== */
+.news-ticker {
+    background: linear-gradient(45deg, #c0392b, #e67e22);
+    color: white;
+    text-align: center;
+    padding: 12px 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #1DB954;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: tickerMove 25s linear infinite;
+}
+
+.ticker-content i {
+    margin: 0 10px;
+    color: #1DB954;
+    font-size: 1.1rem;
+}
+
+@keyframes tickerMove {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pausa a animação ao passar o mouse */
+.news-ticker:hover .ticker-content {
+    animation-play-state: paused;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .news-ticker {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+    .ticker-content {
+        animation: tickerMove 15s linear infinite;
+    }
+}
 </style>
 </head>
 
 <body>
+
+<!-- BANNER DE ÚLTIMAS NOTÍCIAS -->
+<div class="news-ticker" id="newsTicker">
+    <div class="ticker-content" id="tickerMessage">
+        <i class="fas fa-circle"></i> Carregando últimas notícias...
+    </div>
+</div>
 
 <div class="container">
 
@@ -394,6 +452,51 @@ if (window.matchMedia('(display-mode: standalone)').matches) {
   console.log('✅ Rodando como app instalado');
   installButton.style.display = 'none';
 }
+
+// ===== BANNER DE NOTÍCIAS - LER DO ARQUIVO msg.txt =====
+async function carregarNoticias() {
+    try {
+        // Tenta buscar o arquivo msg.txt na raiz com cache buster
+        const resposta = await fetch('msg.txt?' + new Date().getTime());
+        
+        if (!resposta.ok) {
+            throw new Error('Arquivo não encontrado');
+        }
+        
+        const mensagem = await resposta.text();
+        const mensagemLimpa = mensagem.trim();
+        
+        if (mensagemLimpa) {
+            atualizarTicker(mensagemLimpa);
+        } else {
+            usarMensagemPadrao();
+        }
+    } catch (erro) {
+        console.log('Arquivo msg.txt não encontrado, usando mensagem padrão');
+        usarMensagemPadrao();
+    }
+}
+
+function atualizarTicker(mensagem) {
+    const ticker = document.getElementById('tickerMessage');
+    if (ticker) {
+        // Mantém o ícone e adiciona a mensagem
+        ticker.innerHTML = `<i class="fas fa-circle"></i> ${mensagem} <i class="fas fa-circle"></i>`;
+    }
+}
+
+function usarMensagemPadrao() {
+    const ticker = document.getElementById('tickerMessage');
+    if (ticker) {
+        ticker.innerHTML = '<i class="fas fa-circle"></i> Fique ligado nas próximas novidades do 41 Cast! <i class="fas fa-circle"></i>';
+    }
+}
+
+// Carrega as notícias quando a página abrir
+document.addEventListener('DOMContentLoaded', carregarNoticias);
+
+// Recarrega a notícia a cada 30 segundos (se o arquivo mudar)
+setInterval(carregarNoticias, 30000);
 </script>
 
 </body>
