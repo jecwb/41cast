@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>41 Cast | Podcast Oficial</title>
 
+<!-- Manifest PWA -->
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="41 Cast">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
 <!-- Font Awesome para ícones -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -55,34 +62,27 @@ from{opacity:0; transform:translateY(20px);}
 to{opacity:1; transform:translateY(0);}
 }
 
-/* Logo com imagem */
+/* Logo apenas com imagem */
 .logo {
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 12px;
-margin-bottom: 10px;
+margin-bottom: 40px;
 }
 
 .logo-img {
-width: 48px;
-height: 48px;
-border-radius: 12px;
+width: 80px;
+height: 80px;
+border-radius: 20px;
 object-fit: cover;
-box-shadow: 0 0 20px rgba(29,185,84,0.3);
+box-shadow: 0 0 30px rgba(29,185,84,0.4);
+animation: pulseLogo 2s infinite;
 }
 
-.logo-text {
-font-size: 36px;
-font-weight: 700;
-background: linear-gradient(90deg, #1DB954, #00f2ff);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-.subtitle{
-color:#9ca3af;
-margin-bottom:40px;
+@keyframes pulseLogo {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
 }
 
 /* CARDS */
@@ -117,6 +117,40 @@ gap:10px;
 background:linear-gradient(135deg,#1DB954,#0ea5e9);
 font-weight:600;
 box-shadow:0 0 20px rgba(29,185,84,0.4);
+}
+
+/* BOTÃO INSTALAR APP */
+.install-btn {
+background: rgba(255,255,255,0.1);
+border: 2px solid #1DB954;
+color: white;
+padding: 16px;
+border-radius: 18px;
+margin: 30px 0 20px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+font-weight: 600;
+font-size: 16px;
+transition: 0.3s;
+width: 100%;
+backdrop-filter: blur(12px);
+}
+
+.install-btn:hover {
+background: #1DB954;
+transform: translateY(-4px);
+box-shadow: 0 0 30px rgba(29,185,84,0.5);
+}
+
+.install-btn i {
+font-size: 24px;
+}
+
+.install-btn.hidden {
+display: none;
 }
 
 .section-title{
@@ -175,7 +209,7 @@ animation:pulseDonate 2s infinite;
 }
 
 footer{
-margin-top:50px;
+margin-top:30px;
 color:#555;
 font-size:13px;
 }
@@ -195,12 +229,10 @@ font-size: 28px;
 
 <div class="container">
 
-<!-- Logo com imagem -->
+<!-- Logo apenas com imagem -->
 <div class="logo">
 <img src="icons/icon-192.png" alt="41 Cast" class="logo-img">
-<span class="logo-text">41 CAST</span>
 </div>
-<div class="subtitle">Podcast • Comunidade • Apoio</div>
 
 <div class="card primary">
 <a href="#" onclick="abrirInteligente()">
@@ -255,6 +287,12 @@ font-size: 28px;
 </a>
 </div>
 
+<!-- BOTÃO INSTALAR APP -->
+<button class="install-btn hidden" id="installButton">
+<i class="fas fa-download"></i> Instalar App
+<i class="fas fa-mobile-alt"></i>
+</button>
+
 <footer>
 © 2026 41 Cast — Todos os direitos reservados
 </footer>
@@ -272,6 +310,7 @@ font-size: 28px;
 </a>
 
 <script>
+// Função para abrir player inteligente
 function abrirInteligente(){
 if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
 window.open("https://podcasts.apple.com/br/podcast/41-cast/id1876223880","_blank");
@@ -279,6 +318,54 @@ window.open("https://podcasts.apple.com/br/podcast/41-cast/id1876223880","_blank
 window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
 }
 }
+
+// PWA - Instalação do App
+let deferredPrompt;
+const installButton = document.getElementById('installButton');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Previne que o mini-infobar apareça no mobile
+  e.preventDefault();
+  // Armazena o evento para usar depois
+  deferredPrompt = e;
+  // Mostra o botão de instalação
+  installButton.classList.remove('hidden');
+});
+
+installButton.addEventListener('click', async () => {
+  if (!deferredPrompt) {
+    return;
+  }
+  // Mostra o prompt de instalação
+  deferredPrompt.prompt();
+  // Aguarda a escolha do usuário
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`Usuário ${outcome === 'accepted' ? 'aceitou' : 'recusou'} a instalação`);
+  // Limpa o prompt
+  deferredPrompt = null;
+  // Esconde o botão
+  installButton.classList.add('hidden');
+});
+
+// Registra o Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+      })
+      .catch(error => {
+        console.log('Falha ao registrar ServiceWorker: ', error);
+      });
+  });
+}
+
+// Detecta se o app já está instalado (opcional)
+window.addEventListener('appinstalled', (e) => {
+  console.log('App instalado com sucesso!');
+  installButton.classList.add('hidden');
+  deferredPrompt = null;
+});
 </script>
 
 </body>
