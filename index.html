@@ -226,35 +226,37 @@ font-size: 1.1em;
 font-size: 28px;
 }
 
-/* ===== BANNER DE ÚLTIMAS NOTÍCIAS ===== */
+/* ===== BANNER DE ÚLTIMAS NOTÍCIAS - VERSÃO SUTIL ===== */
 .news-ticker {
-    background: linear-gradient(45deg, #c0392b, #e67e22);
-    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(29, 185, 84, 0.3);
+    color: #e0e0e0;
     text-align: center;
-    padding: 12px 15px;
+    padding: 8px 15px;
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    border-bottom: 2px solid #1DB954;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    letter-spacing: 0.3px;
     white-space: nowrap;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ticker-content {
     display: inline-block;
-    animation: tickerMove 25s linear infinite;
+    animation: tickerMove 30s linear infinite;
 }
 
 .ticker-content i {
-    margin: 0 10px;
+    margin: 0 12px;
     color: #1DB954;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
+    opacity: 0.7;
 }
 
 @keyframes tickerMove {
@@ -267,14 +269,19 @@ font-size: 28px;
     animation-play-state: paused;
 }
 
+/* Efeito de brilho sutil no texto */
+.ticker-content {
+    text-shadow: 0 0 5px rgba(29, 185, 84, 0.3);
+}
+
 /* Responsivo para mobile */
 @media (max-width: 768px) {
     .news-ticker {
-        font-size: 0.9rem;
-        padding: 10px 0;
+        font-size: 0.8rem;
+        padding: 6px 0;
     }
     .ticker-content {
-        animation: tickerMove 15s linear infinite;
+        animation: tickerMove 20s linear infinite;
     }
 }
 </style>
