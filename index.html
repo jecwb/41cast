@@ -3,93 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>41 Cast | Podcast Oficial</title>
 
-<title>41 Cast | Podcast Oficial 🎙️ Cultura, Música e Histórias Reais</title>
-
-<meta name="description" content="41 Cast é um podcast brasileiro sobre cultura, música, hip hop, histórias reais e convidados especiais. Ouça agora no Spotify, Apple Podcasts, Amazon Music, YouTube e Deezer.">
-<meta name="keywords" content="41 Cast, podcast brasileiro, hip hop Curitiba, cultura urbana, entrevistas, música, Spotify podcast, Apple podcast">
-<meta name="author" content="41 Cast">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.41cast.com.br/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="41 Cast | Podcast Oficial">
-<meta property="og:description" content="Podcast brasileiro sobre cultura, música e histórias reais. Ouça agora nas principais plataformas.">
-<meta property="og:url" content="https://www.41cast.com.br/">
-<meta property="og:image" content="https://www.41cast.com.br/icons/icon-512.png">
-<meta property="og:site_name" content="41 Cast">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="41 Cast | Podcast Oficial">
-<meta name="twitter:description" content="Podcast brasileiro sobre cultura, música e histórias reais.">
-<meta name="twitter:image" content="https://www.41cast.com.br/icons/icon-512.png">
-
-<!-- PWA -->
+<!-- PWA Meta Tags -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1DB954">
 
+<!-- Para iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="41 Cast">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
 
+<!-- Para Windows -->
 <meta name="msapplication-TileColor" content="#1DB954">
 <meta name="msapplication-TileImage" content="/icons/icon-192.png">
 
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-192.png">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "PodcastSeries",
-  "name": "41 Cast",
-  "url": "https://www.41cast.com.br/",
-  "description": "Podcast brasileiro sobre cultura, música, hip hop e histórias reais.",
-  "image": "https://www.41cast.com.br/icons/icon-512.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "41 Cast"
-  }
-}
-</script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0b0f14;color:#fff;overflow-x:hidden;}
+/* Seu CSS existente - mantém igual */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0b0f14;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* FUNDO ANIMADO */
 body::before{
-content:"";position:fixed;width:200%;height:200%;
+content:"";
+position:fixed;
+width:200%;
+height:200%;
 background:
 radial-gradient(circle at 20% 30%,rgba(0,255,128,0.08),transparent 40%),
 radial-gradient(circle at 80% 70%,rgba(0,200,255,0.08),transparent 40%);
-animation:moveBg 15s linear infinite alternate;z-index:-1;
+animation:moveBg 15s linear infinite alternate;
+z-index:-1;
 }
-@keyframes moveBg{0%{transform:translate(0,0);}100%{transform:translate(-10%,-10%);}}
-.container{max-width:520px;margin:auto;padding:60px 20px;text-align:center;animation:fadeIn 1.2s ease;}
-@keyframes fadeIn{from{opacity:0; transform:translateY(20px);}to{opacity:1; transform:translateY(0);}}
-.logo{display:flex;align-items:center;justify-content:center;margin-bottom:40px;}
-.logo-img{width:80px;height:80px;border-radius:20px;object-fit:cover;box-shadow:0 0 30px rgba(29,185,84,0.4);animation:pulseLogo 2s infinite;}
-@keyframes pulseLogo{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
-.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);padding:16px;border-radius:18px;margin:14px 0;transition:0.3s;}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 25px rgba(29,185,84,0.3);border:1px solid rgba(29,185,84,0.4);}
-.card a{text-decoration:none;color:white;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;}
-.primary{background:linear-gradient(135deg,#1DB954,#0ea5e9);font-weight:600;box-shadow:0 0 20px rgba(29,185,84,0.4);}
-.install-btn{background:linear-gradient(135deg,#1DB954,#0ea5e9);border:none;color:white;padding:18px;border-radius:18px;margin:30px 0 20px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;font-weight:700;font-size:18px;transition:0.3s;width:100%;box-shadow:0 0 30px rgba(29,185,84,0.4);border:2px solid rgba(255,255,255,0.1);}
-.install-btn:hover{transform:translateY(-4px);box-shadow:0 0 40px rgba(29,185,84,0.8);}
-.install-btn.hidden{display:none;}
-.section-title{margin:35px 0 15px;font-size:13px;letter-spacing:2px;color:#6b7280;text-transform:uppercase;}
-.float-btn{position:fixed;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:white;cursor:pointer;transition:0.3s;z-index:999;text-decoration:none;}
-.whatsapp{bottom:25px;right:25px;background:#25D366;box-shadow:0 0 20px rgba(37,211,102,0.6);}
-.donate{bottom:100px;right:25px;background:linear-gradient(135deg,#1DB954,#0ea5e9);box-shadow:0 0 20px rgba(29,185,84,0.6);}
-footer{margin-top:30px;color:#555;font-size:13px;}
+
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+100%{transform:translate(-10%,-10%);}
+}
+
+.container{
+max-width:520px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Logo apenas com imagem */
+.logo {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 40px;
+}
+
+.logo-img {
+width: 80px;
+height: 80px;
+border-radius: 20px;
+object-fit: cover;
+box-shadow: 0 0 30px rgba(29,185,84,0.4);
+animation: pulseLogo 2s infinite;
+}
+
+@keyframes pulseLogo {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:16px;
+border-radius:18px;
+margin:14px 0;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(29,185,84,0.3);
+border:1px solid rgba(29,185,84,0.4);
+}
+
+.card a{
+text-decoration:none;
+color:white;
+font-weight:500;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+/* BOTÃO PRINCIPAL */
+.primary{
+background:linear-gradient(135deg,#1DB954,#0ea5e9);
+font-weight:600;
+box-shadow:0 0 20px rgba(29,185,84,0.4);
+}
+
+/* BOTÃO INSTALAR APP */
+.install-btn {
+background: linear-gradient(135deg, #1DB954, #0ea5e9);
+border: none;
+color: white;
+padding: 18px;
+border-radius: 18px;
+margin: 30px 0 20px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+font-weight: 700;
+font-size: 18px;
+transition: 0.3s;
+width: 100%;
+box-shadow: 0 0 30px rgba(29,185,84,0.4);
+border: 2px solid rgba(255,255,255,0.1);
+}
+
+.install-btn:hover {
+transform: translateY(-4px);
+box-shadow: 0 0 40px rgba(29,185,84,0.8);
+background: linear-gradient(135deg, #1ed760, #0ea5e9);
+}
+
+.install-btn i {
+font-size: 24px;
+}
+
+.install-btn.hidden {
+display: none;
+}
+
+.section-title{
+margin:35px 0 15px;
+font-size:13px;
+letter-spacing:2px;
+color:#6b7280;
+text-transform:uppercase;
+}
+
+/* BOTÕES FLUTUANTES */
+.float-btn{
+position:fixed;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+z-index:999;
+text-decoration:none;
+}
+
+.whatsapp{
+bottom:25px;
+right:25px;
+background:#25D366;
+box-shadow:0 0 20px rgba(37,211,102,0.6);
+animation:pulse 2s infinite;
+}
+
+.donate{
+bottom:100px;
+right:25px;
+background:linear-gradient(135deg,#1DB954,#0ea5e9);
+box-shadow:0 0 20px rgba(29,185,84,0.6);
+animation:pulseDonate 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+@keyframes pulseDonate{
+0%{box-shadow:0 0 0 0 rgba(29,185,84,0.7);}
+70%{box-shadow:0 0 0 18px rgba(29,185,84,0);}
+100%{box-shadow:0 0 0 0 rgba(29,185,84,0);}
+}
+
+footer{
+margin-top:30px;
+color:#555;
+font-size:13px;
+}
+
+.card i {
+font-size: 1.1em;
+}
+
+.float-btn i {
+font-size: 28px;
+}
 </style>
 </head>
 
@@ -97,11 +233,9 @@ footer{margin-top:30px;color:#555;font-size:13px;}
 
 <div class="container">
 
+<!-- Logo apenas com imagem -->
 <div class="logo">
- <h1 style="display:none;">
-41 Cast - Podcast em Curitiba sobre cultura, música e hip hop
-</h1> 
-<img src="icons/icon-192.png" alt="Logo oficial do Podcast 41 Cast" class="logo-img">
+<img src="icons/icon-192.png" alt="41 Cast" class="logo-img">
 </div>
 
 <div class="card primary">
@@ -112,16 +246,56 @@ footer{margin-top:30px;color:#555;font-size:13px;}
 
 <div class="section-title">Plataformas</div>
 
-<div class="card"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i> Spotify</a></div>
-<div class="card"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank" rel="noopener noreferrer"><i class="fas fa-podcast"></i> Apple Podcasts</a></div>
-<div class="card"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank" rel="noopener noreferrer"><i class="fab fa-amazon"></i> Amazon Music</a></div>
-<div class="card"><a href="https://youtube.com/@41Cast" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a></div>
-<div class="card"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank" rel="noopener noreferrer"><i class="fab fa-deezer"></i> Deezer</a></div>
+<div class="card"><a href="https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx" target="_blank">
+<i class="fab fa-spotify" style="color:#1DB954;"></i> Spotify
+</a></div>
+<div class="card"><a href="https://podcasts.apple.com/br/podcast/41-cast/id1876223880" target="_blank">
+<i class="fas fa-podcast" style="color:#A2AAAD;"></i> Apple Podcasts
+</a></div>
+<div class="card"><a href="https://music.amazon.com.br/podcasts/f4d203a1-5a53-445a-b5ba-57d1f4ac6539/41-cast" target="_blank">
+<i class="fab fa-amazon" style="color:#FF9900;"></i> Amazon Music
+</a></div>
+<div class="card"><a href="https://youtube.com/@41Cast" target="_blank">
+<i class="fab fa-youtube" style="color:#FF0000;"></i> YouTube
+</a></div>
+<div class="card"><a href="https://link.deezer.com/s/32u75H6Svw42XqaC6CJ8b" target="_blank">
+<i class="fab fa-deezer" style="color:#FEAA2D;"></i> Deezer
+</a></div>
+
+<div class="section-title">WhatsApp</div>
+
+<div class="card"><a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank">
+<i class="fab fa-whatsapp" style="color:#25D366;"></i> 👥 Comunidade Oficial
+</a></div>
+<div class="card"><a href="https://chat.whatsapp.com/BNFVfKTQids4MCEo1gvuEZ" target="_blank">
+<i class="fab fa-whatsapp" style="color:#25D366;"></i> 📩 Grupo de Mensagens
+</a></div>
 
 <div class="section-title">Redes Sociais</div>
 
-<div class="card"><a href="https://www.instagram.com/41Cast" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></div>
-<div class="card"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></div>
+<div class="card"><a href="https://www.instagram.com/41Cast" target="_blank">
+<i class="fab fa-instagram" style="color:#E4405F;"></i> Instagram
+</a></div>
+<div class="card"><a href="https://www.facebook.com/profile.php?id=61587426029200" target="_blank">
+<i class="fab fa-facebook" style="color:#1877F2;"></i> Facebook
+</a></div>
+<div class="card"><a href="mailto:41castcwb@gmail.com">
+<i class="far fa-envelope" style="color:#9ca3af;"></i> Email
+</a></div>
+
+<div class="section-title">Apoie o Projeto</div>
+
+<div class="card primary">
+<a href="doar.html">
+<i class="fas fa-heart"></i> Ir para Página de Doação
+</a>
+</div>
+
+<!-- BOTÃO INSTALAR APP -->
+<button class="install-btn" id="installButton" style="display: none;">
+<i class="fas fa-download"></i> Instalar App
+<i class="fas fa-mobile-alt"></i>
+</button>
 
 <footer>
 © 2026 41 Cast — Todos os direitos reservados
@@ -129,13 +303,96 @@ footer{margin-top:30px;color:#555;font-size:13px;}
 
 </div>
 
+<!-- BOTÃO FLUTUANTE DOAÇÃO -->
+<a href="doar.html" class="float-btn donate">
+<i class="fas fa-heart"></i>
+</a>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <script>
+// Função para abrir player inteligente
 function abrirInteligente(){
 if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
 window.open("https://podcasts.apple.com/br/podcast/41-cast/id1876223880","_blank");
 }else{
 window.open("https://open.spotify.com/show/7I7qxqbbX1T6vPnUiRAgpx","_blank");
 }
+}
+
+// PWA - Instalação do App
+let deferredPrompt;
+const installButton = document.getElementById('installButton');
+
+// Registra o Service Worker primeiro
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('✅ ServiceWorker registrado com sucesso:', registration.scope);
+      })
+      .catch(error => {
+        console.log('❌ Falha ao registrar ServiceWorker:', error);
+      });
+  });
+}
+
+// Captura o evento de instalação
+window.addEventListener('beforeinstallprompt', (e) => {
+  console.log('✅ Evento beforeinstallprompt disparado!');
+  e.preventDefault();
+  deferredPrompt = e;
+  
+  // Mostra o botão de instalação
+  installButton.style.display = 'flex';
+});
+
+// Quando clicar no botão de instalar
+installButton.addEventListener('click', async () => {
+  console.log('Botão de instalação clicado');
+  
+  if (!deferredPrompt) {
+    console.log('Sem evento de instalação disponível');
+    
+    // Fallback para iOS ou navegadores sem suporte
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      alert('📱 No iPhone/iPad: Toque no botão Compartilhar 📤 e depois em "Adicionar à Tela de Início"');
+    } else {
+      alert('Para instalar este app, use o menu do navegador (3 pontos) e selecione "Instalar app" ou "Adicionar à tela inicial"');
+    }
+    return;
+  }
+  
+  // Mostra o prompt de instalação
+  deferredPrompt.prompt();
+  
+  // Aguarda a escolha do usuário
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`Usuário ${outcome === 'accepted' ? 'aceitou' : 'recusou'} a instalação`);
+  
+  // Limpa o prompt
+  deferredPrompt = null;
+  
+  // Esconde o botão se instalou
+  if (outcome === 'accepted') {
+    installButton.style.display = 'none';
+  }
+});
+
+// Detecta quando o app foi instalado
+window.addEventListener('appinstalled', (e) => {
+  console.log('✅ App instalado com sucesso!');
+  installButton.style.display = 'none';
+  deferredPrompt = null;
+});
+
+// Verifica se já está rodando como app instalado
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('✅ Rodando como app instalado');
+  installButton.style.display = 'none';
 }
 </script>
 
