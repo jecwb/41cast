@@ -271,6 +271,21 @@ box-shadow:0 0 20px rgba(29,185,84,0.6);
 animation:pulseDonate 2s infinite;
 }
 
+/* NOVO BOTÃO APOIA.SE FLUTUANTE */
+.apoia-se{
+bottom:175px;
+right:25px;
+background:#FF7A00;
+box-shadow:0 0 20px rgba(255,122,0,0.6);
+animation:pulseApoiaSe 2s infinite;
+}
+
+@keyframes pulseApoiaSe{
+0%{box-shadow:0 0 0 0 rgba(255,122,0,0.7);}
+70%{box-shadow:0 0 0 18px rgba(255,122,0,0);}
+100%{box-shadow:0 0 0 0 rgba(255,122,0,0);}
+}
+
 @keyframes pulse{
 0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
 70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
@@ -357,6 +372,13 @@ font-size: 28px;
 
 <h2 class="section-title">Apoie o Projeto</h2>
 
+<!-- NOVO BOTÃO APOIA.SE (ACIMA DO DOAÇÃO) -->
+<div class="card" style="background: rgba(255,122,0,0.1); border-color: rgba(255,122,0,0.3);">
+<a href="https://apoia.se/cast41" target="_blank" rel="noopener noreferrer" aria-label="Apoie o 41 Cast no APOIA.se">
+<i class="fas fa-heart" style="color:#FF7A00;" aria-hidden="true"></i> APOIA.se (Apoie com R$)
+</a>
+</div>
+
 <div class="card primary">
 <a href="doar.html" aria-label="Acesse a página de doação para apoiar o 41 Cast">
 <i class="fas fa-heart" aria-hidden="true"></i> Ir para Página de Doação
@@ -374,6 +396,11 @@ font-size: 28px;
 </footer>
 
 </div>
+
+<!-- BOTÃO FLUTUANTE APOIA.SE (NOVO) -->
+<a href="https://apoia.se/cast41" target="_blank" rel="noopener noreferrer" class="float-btn apoia-se" aria-label="Apoie o 41 Cast no APOIA.se">
+<i class="fas fa-heart" aria-hidden="true"></i>
+</a>
 
 <!-- BOTÃO FLUTUANTE DOAÇÃO -->
 <a href="doar.html" class="float-btn donate" aria-label="Ir para a página de doação">
