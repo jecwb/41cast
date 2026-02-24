@@ -3,27 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>41 Cast | Podcast Oficial</title>
 
-<!-- PWA Meta Tags -->
+<!-- 
+  ========================================
+  🚀 OTIMIZAÇÕES DE SEO (INVISÍVEL AO USUÁRIO)
+  ========================================
+-->
+
+<!-- TÍTULO OTIMIZADO: Mais descritivo e rico em palavras-chave -->
+<title>41 Cast | Podcast de Curitiba sobre Histórias, Artes e Música</title>
+
+<!-- META DESCRIPTION: Um dos fatores mais importantes para o CTR no Google. Deve ser atraente e conter as palavras-chave principais. -->
+<meta name="description" content="O 41 Cast é o podcast da galera de Curitiba. Toda semana, histórias reais, música boa, arte e conversas sobre a vida e a cidade. Ouça agora!">
+
+<!-- PALAVRAS-CHAVE (Ainda que menos relevantes, ajudam na contextualização) -->
+<meta name="keywords" content="podcast curitiba, 41 cast, histórias curitibanas, musica curitiba, arte paranaense, podcast paranaense, cultura curitiba">
+
+<!-- AUTHOR E COPYRIGHT: Mostra autoridade e autoria -->
+<meta name="author" content="41 Cast">
+<meta name="copyright" content="© 2026 41 Cast">
+
+<!-- ROBOTS: Instrui o Google a indexar a página e seguir os links. É a configuração padrão ideal. -->
+<meta name="robots" content="index, follow">
+
+<!-- 
+  ========================================
+  META TAGS PARA REDES SOCIAIS (OPEN GRAPH - Facebook, WhatsApp, etc.)
+  ========================================
+  Isso controla como o link do seu site aparece quando compartilhado.
+-->
+<meta property="og:title" content="41 Cast | O Podcast de Curitiba">
+<meta property="og:description" content="Histórias, artes, vida e música. Tudo com a cara da nossa cidade. Ouça o 41 Cast agora!">
+<meta property="og:url" content="https://www.41cast.com.br">
+<!-- É CRÍCIAL que essa imagem exista no seu servidor. Crie uma imagem de banner de 1200x630px. -->
+<meta property="og:image" content="https://www.41cast.com.br/banner-41cast.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="41 Cast">
+
+<!-- 
+  ========================================
+  META TAGS PARA O TWITTER (X)
+  ========================================
+  Para ter um card elegante quando compartilhado no Twitter/X.
+-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="41 Cast | O Podcast de Curitiba">
+<meta name="twitter:description" content="Histórias, artes, vida e música. Tudo com a cara da nossa cidade. Ouça o 41 Cast agora!">
+<!-- A mesma imagem do OG ou uma versão para o Twitter -->
+<meta name="twitter:image" content="https://www.41cast.com.br/banner-41cast.jpg">
+<meta name="twitter:site" content="@41Cast"> <!-- Substitua pelo seu @ do Twitter, se tiver -->
+
+<!-- 
+  ========================================
+  META TAGS PARA PWA (JÁ EXISTENTES - MANTIDAS)
+  ========================================
+-->
 <link rel="manifest" href="manifest.json">
-
-<!-- Para iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="41 Cast">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
-
-<!-- Para Windows -->
 <meta name="msapplication-TileColor" content="#1DB954">
 <meta name="msapplication-TileImage" content="/icons/icon-192.png">
 
-<!-- Font Awesome -->
+<!-- 
+  ========================================
+  FONTES E ESTILOS (INALTERADOS)
+  ========================================
+-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Seu CSS existente - mantém igual */
+/* SEU CSS COMPLETO - MANTIDO EXATAMENTE IGUAL */
 *{
 margin:0;
 padding:0;
@@ -228,14 +281,14 @@ font-size: 28px;
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<!-- Logo apenas com imagem -->
+<!-- Logo apenas com imagem (INALTERADO) -->
 <div class="logo">
-<img src="icons/icon-192.png" alt="41 Cast" class="logo-img">
+<!-- DICA EXTRA DE SEO: O atributo ALT é importante. Ele descreve a imagem para o Google. -->
+<img src="icons/icon-192.png" alt="Logo do 41 Cast - Podcast de Curitiba" class="logo-img">
 </div>
 
 <div class="card primary">
@@ -291,7 +344,7 @@ font-size: 28px;
 </a>
 </div>
 
-<!-- BOTÃO INSTALAR APP -->
+<!-- BOTÃO INSTALAR APP (INALTERADO) -->
 <button class="install-btn" id="installButton" style="display: none;">
 <i class="fas fa-download"></i> Instalar App
 <i class="fas fa-mobile-alt"></i>
@@ -303,16 +356,15 @@ font-size: 28px;
 
 </div>
 
-<!-- BOTÃO FLUTUANTE DOAÇÃO -->
+<!-- BOTÕES FLUTUANTES (INALTERADOS) -->
 <a href="doar.html" class="float-btn donate">
 <i class="fas fa-heart"></i>
 </a>
-
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
 <a href="https://chat.whatsapp.com/I3CAHspXrZU5Hbi4U6tXpS" target="_blank" class="float-btn whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- SCRIPT (INALTERADO) -->
 <script>
 // Função para abrir player inteligente
 function abrirInteligente(){
