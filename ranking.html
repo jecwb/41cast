@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Troféu 2026 | 41 Cast</title>
+    <link rel="icon" href="https://www.41cast.com.br/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #ffffff;
+            --text-secondary: #8b949e;
+            --accent: #00ff00; /* Verde neon do 41Cast */
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0;
+            background: linear-gradient(45deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .ranking-container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .video-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .rank-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-right: 25px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .rank-1 { color: var(--gold); }
+        .rank-2 { color: var(--silver); }
+        .rank-3 { color: var(--bronze); }
+        .rank-other { color: var(--text-secondary); }
+
+        .thumbnail-container {
+            position: relative;
+            width: 160px;
+            height: 90px;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-info {
+            flex-grow: 1;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .video-stats {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .trophy-badge {
+            margin-left: 15px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .video-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .rank-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .thumbnail-container {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nU8z0O9H5o1vS5r4_o5S0f9j6z9q5s=s176-c-k-c0x00ffffff-no-rj" alt="41 Cast Logo" class="logo">
+        <h1>Ranking Troféu 2026</h1>
+        <p class="subtitle">Os vídeos mais visualizados do canal @41Cast</p>
+    </header>
+
+    <div class="ranking-container">
+        <!-- Rank 1 -->
+        <a href="https://www.youtube.com/@41Cast" class="video-card">
+            <div class="rank-number rank-1">1º</div>
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/Q2G2XG_X_9A/mqdefault.jpg" alt="Thumbnail">
+            </div>
+            <div class="video-info">
+                <p class="video-title">🎙️ EP010 - LPs, CDs e uma Calcinha: As relíquias bizarras da coleção de Aldo Portes de França</p>
+                <p class="video-stats">1.8K visualizações • 2026</p>
+            </div>
+            <div class="trophy-badge">🏆</div>
+        </a>
+
+        <!-- Rank 2 -->
+        <a href="https://www.youtube.com/@41Cast" class="video-card">
+            <div class="rank-number rank-2">2º</div>
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/8V0xY_X_9A/mqdefault.jpg" alt="Thumbnail">
+            </div>
+            <div class="video-info">
+                <p class="video-title">🎙️ EP008 – RAMONES, Misfits e Rock Raiz🔥 | Com Death</p>
+                <p class="video-stats">1.6K visualizações • 2026</p>
+            </div>
+            <div class="trophy-badge">🥈</div>
+        </a>
+
+        <!-- Rank 3 -->
+        <a href="https://www.youtube.com/@41Cast" class="video-card">
+            <div class="rank-number rank-3">3º</div>
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/7V0xY_X_9A/mqdefault.jpg" alt="Thumbnail">
+            </div>
+            <div class="video-info">
+                <p class="video-title">🎙️ EP006 – Thaqueta, Athletico, CazéTV and behind the scenes at Furacão!</p>
+                <p class="video-stats">1.6K visualizações • 2026</p>
+            </div>
+            <div class="trophy-badge">🥉</div>
+        </a>
+
+        <!-- Rank 4 -->
+        <a href="https://www.youtube.com/@41Cast" class="video-card">
+            <div class="rank-number rank-other">4º</div>
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/6V0xY_X_9A/mqdefault.jpg" alt="Thumbnail">
+            </div>
+            <div class="video-info">
+                <p class="video-title">🎙️EP005 – O Maior Colecionador de AC/DC do Brasil | Alexandre Dias</p>
+                <p class="video-stats">1.1K visualizações • 2026</p>
+            </div>
+        </a>
+
+        <!-- Rank 5 -->
+        <a href="https://www.youtube.com/@41Cast" class="video-card">
+            <div class="rank-number rank-other">5º</div>
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/5V0xY_X_9A/mqdefault.jpg" alt="Thumbnail">
+            </div>
+            <div class="video-info">
+                <p class="video-title">🎙️ EP007 – Hidromel: A Bebida dos Deuses e dos Vikings | Henrique Hertel (Kheiron)</p>
+                <p class="video-stats">416 visualizações • 2026</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2026 41 Cast. Todos os direitos reservados.</p>
+        <p>Ranking atualizado automaticamente via YouTube API (Simulado).</p>
+    </footer>
+
+</body>
+</html>
